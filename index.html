@@ -2,66 +2,82 @@
 <html lang="pt-pt">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desenvolvimento Infantil</title>
     <style>
-        :root {
-            --azul-agua: #BADFDB;
-            --pessego: #FFD5C2;
-            --amarelo: #FFEEA8;
-            --castanho: #614639;
+        :root { --azul: #BADFDB; --pessego: #FFD5C2; --amarelo: #FFEEA8; --castanho: #614639; }
+        body { font-family: 'Chewy', sans-serif; color: var(--castanho); margin: 0; line-height: 1.6; }
+        
+        /* Cabeçalho com a Foto */
+        header { 
+            width: 100%; 
+            height: 400px; 
+            background-image: url('capa.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
         }
-        body { font-family: 'Chewy', sans-serif; color: var(--castanho); margin: 0; }
-        header { background-color: var(--azul-agua); padding: 20px; text-align: center; }
+
+        /* O Círculo do Logo */
+        .logo-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-container img {
+            max-width: 150px;
+            height: auto;
+        }
+        
+        nav { background: var(--azul); padding: 15px; text-align: center; position: sticky; top: 0; z-index: 1000; }
         nav a { margin: 0 15px; text-decoration: none; color: var(--castanho); font-weight: bold; }
-        section { padding: 50px 20px; }
-        .hero { background-color: var(--pessego); text-align: center; padding: 100px 20px; }
-        footer { background-color: var(--amarelo); text-align: center; padding: 20px; font-size: 0.9em; }
+        
+        section { padding: 60px 20px; max-width: 900px; margin: auto; }
+        .servicos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .card { background: var(--pessego); padding: 20px; border-radius: 15px; text-align: center; }
+        
+        footer { background: var(--amarelo); text-align: center; padding: 30px; margin-top: 50px; }
     </style>
 </head>
 <body>
 
 <header>
-    <nav>
-        <a href="#servicos">Serviços</a>
-        <a href="#equipa">Equipa</a>
-        <a href="#artigos">Artigos</a>
-        <a href="#testemunhos">O que dizem</a>
-        <a href="#contactos">Contactos</a>
-    </nav>
+    <div class="logo-container">
+        <img src="logo.png" alt="Logótipo">
+    </div>
 </header>
 
-<section class="hero">
-    <h1>IUPI Desenvolvimento Infantil</h1>
-</section>
+<nav>
+    <a href="#servicos">Serviços</a>
+    <a href="#equipa">Equipa</a>
+    <a href="#contactos">Contactos</a>
+</nav>
 
 <section id="servicos">
-    <h2>Serviços</h2>
-    <ul>
-        <li>Terapia Ocupacional - Integração Sensorial</li>
-        <li>Terapia da Fala</li>
-        <li>Fisioterapia</li>
-    </ul>
+    <h2 style="text-align: center;">Serviços</h2>
+    <div class="servicos-grid">
+        <div class="card"><h3>Terapia Ocupacional</h3><p>Integração Sensorial</p></div>
+        <div class="card"><h3>Terapia da Fala</h3></div>
+        <div class="card"><h3>Fisioterapia</h3></div>
+    </div>
 </section>
 
-<section id="Equipa">
-    <h2>Equipa</h2>
-    <p>Conheça os nossos especialistas.</p>
-</section>
-
-<section id="Artigos">
-    <h2>Artigos</h2>
-</section>
-
-<section id="Testemunhos">
-    <h2>O que dizem sobre nós</h2>
-</section>
-
-<section id="contactos">
-    <h2>Contactos</h2>
+<section id="equipa">
+    <h2 style="text-align: center;">Equipa</h2>
+    <p style="text-align: center;">Fotos da equipa aqui.</p>
 </section>
 
 <footer>
-    <p>Número da ERS 178658</p>
+    <p><strong>Número da ERS: 178658</strong></p>
 </footer>
 
 </body>
